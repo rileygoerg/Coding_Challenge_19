@@ -1,3 +1,4 @@
+//U14123683
 import React, {useState, useEffect} from 'react';
 import Tour from './Tour';
 import './Gallery.css'
@@ -5,7 +6,7 @@ import './Gallery.css'
 export default function Gallery(){
   const [tours, setTours] = useState([]);
   const [currentTour, setCurrentTour] = useState(0);
-
+// Fetching API
   useEffect(() => {
     fetch('https://course-api.com/react-tours-project')
     .then((response) => {
@@ -18,7 +19,7 @@ export default function Gallery(){
         setTours(data);
       })
   }, []);
-
+// Removing Tour Functionality
   function removeTour(id){
     const newTours = tours.filter((tour) => tour.id !== id);
     setTours(newTours);
@@ -26,11 +27,11 @@ export default function Gallery(){
       setCurrentTour(newTours.length - 1);
     }
   };
-
+// Next button functionality
   function nextTour(){
     setCurrentTour((prevIndex) => (prevIndex + 1) % tours.length);
   };
-
+// Previous button functionality
   function previousTour(){
     setCurrentTour((prevIndex) => (prevIndex - 1 + tours.length) % tours.length);
   };

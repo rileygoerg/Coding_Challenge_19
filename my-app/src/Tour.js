@@ -1,9 +1,10 @@
+//U14123683
 import React, {useState} from 'react';
 import './Tour.css'
 
 export default function Tour({id, name, info, image, price, removeTour}) {
   const [readMore, setReadMore] = useState(false);
-
+// Adding Read More and Not Interested Buttons
   return (
     <div className="tour">
       <img src={image}/>
@@ -11,8 +12,8 @@ export default function Tour({id, name, info, image, price, removeTour}) {
         <h4>{name}</h4>
         <h4 className="price">${price}</h4>
         <p>
-          {readMore ? info : ``}
-          <button onClick={() => setReadMore(!readMore)}>
+          {readMore ? info : ``} 
+          <button onClick={() => setReadMore(!readMore)}> 
             {readMore ? 'Show Less' : 'Read More'}
           </button>
         </p>
