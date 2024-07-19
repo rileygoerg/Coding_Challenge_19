@@ -1,0 +1,17 @@
+.tours {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tourbuttons {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin-top: 20px;
+}
+  button {
+    background: orangered;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
